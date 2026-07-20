@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>שאלון אפיון לדף נחיתה | Shriki Studio</title>
+  <meta name="description" content="שאלון אפיון מקצועי ללקוחות — כל הפרטים שאנחנו צריכים כדי לבנות לך דף נחיתה שעובד.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+
+  <!-- פס התקדמות -->
+  <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+
+  <!-- הירו -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <p class="hero-kicker">✦ Shriki Studio</p>
+      <h1>בואו נבנה לך דף נחיתה<br><em>שבאמת עובד</em></h1>
+      <p class="hero-sub">
+        השאלון הקצר הזה עוזר לנו להכיר את העסק שלך לעומק —
+        ככל שהתשובות מפורטות יותר, הדף שנבנה יהיה מדויק יותר.
+        מילוי השאלון לוקח כ־10 דקות, ואפשר לעצור ולחזור: התשובות נשמרות אצלך במכשיר.
+      </p>
+      <a href="#form-start" class="btn btn-primary">מתחילים ✦</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <form id="briefForm" novalidate>
+
+      <!-- 1. פרטים אישיים -->
+      <section class="card" id="form-start" data-section>
+        <div class="card-head">
+          <span class="card-num">01</span>
+          <div>
+            <h2>פרטים אישיים</h2>
+            <p class="card-sub">כדי שנדע מי את/ה ואיך חוזרים אליך.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <label class="field">
+            <span class="field-label">שם מלא <b class="req">*</b></span>
+            <input type="text" name="fullName" required autocomplete="name" placeholder="לדוגמה: דנה כהן">
+          </label>
+          <label class="field">
+            <span class="field-label">טלפון <b class="req">*</b></span>
+            <input type="tel" name="phone" required autocomplete="tel" placeholder="050-0000000">
+          </label>
+          <label class="field">
+            <span class="field-label">אימייל</span>
+            <input type="email" name="email" autocomplete="email" placeholder="name@example.com">
+          </label>
+          <label class="field">
+            <span class="field-label">שם העסק <b class="req">*</b></span>
+            <input type="text" name="businessName" required placeholder="השם כפי שיופיע בדף">
+          </label>
+        </div>
+        <label class="field">
+          <span class="field-label">תפקיד או תואר מקצועי</span>
+          <input type="text" name="title" placeholder="לדוגמה: מאמנת כושר מוסמכת, עורך דין, קוסמטיקאית רפואית">
+        </label>
+      </section>
+
+      <!-- 2. על העסק -->
+      <section class="card" data-section>
+        <div class="card-head">
+          <span class="card-num">02</span>
+          <div>
+            <h2>על העסק</h2>
+            <p class="card-sub">הסיפור שלך הוא הבסיס לטקסטים של הדף.</p>
+          </div>
+        </div>
+        <label class="field">
+          <span class="field-label">מה העסק עושה? תיאור קצר <b class="req">*</b></span>
+          <textarea name="businessDesc" required rows="3" placeholder="במשפט או שניים — מה אתם עושים ולמי"></textarea>
+        </label>
+        <div class="field">
+          <span class="field-label">כמה זמן העסק קיים?</span>
+          <div class="chips" data-chips="single" data-name="businessAge">
+            <button type="button" class="chip">עסק חדש</button>
+            <button type="button" class="chip">עד שנה</button>
+            <button type="button" class="chip">1–3 שנים</button>
+            <button type="button" class="chip">3–10 שנים</button>
+            <button type="button" class="chip">מעל 10 שנים</button>
+          </div>
+        </div>
+        <label class="field">
+          <span class="field-label">הסיפור שלך — איך הגעת לתחום?</span>
+          <textarea name="story" rows="3" placeholder="סיפור אישי יוצר חיבור עם הגולשים. ספרו בחופשיות"></textarea>
+        </label>
+      </section>
+
+      <!-- 3. השירות והמטרה -->
+      <section class="card" data-section>
+        <div class="card-head">
+          <span class="card-num">03</span>
+          <div>
+            <h2>השירות ומטרת הדף</h2>
+            <p class="card-sub">מה מקדמים, ומה הגולש אמור לעשות בסוף.</p>
+          </div>
+        </div>
+        <label class="field">
+          <span class="field-label">מה השירות או המוצר שהדף מקדם? <b class="req">*</b></span>
+          <textarea name="service" required rows="3" placeholder="פרטו: מה כלול, כמה זמן נמשך, איפה זה מתקיים וכו'"></textarea>
+        </label>
+        <div class="field">
+          <span class="field-label">מה המטרה המרכזית של הדף? <b class="req">*</b></span>
+          <div class="chips" data-chips="multi" data-name="pageGoal" data-required="true">
+            <button type="button" class="chip">פניות בוואטסאפ</button>
+            <button type="button" class="chip">שיחות טלפון</button>
+            <button type="button" class="chip">השארת פרטים</button>
+            <button type="button" class="chip">קביעת תור</button>
+            <button type="button" class="chip">מכירה ישירה</button>
+            <button type="button" class="chip">הרשמה לסדנה או קורס</button>
+          </div>
+        </div>
+        <div class="field">
+          <span class="field-label">האם להציג מחירים בדף?</span>
+          <div class="chips" data-chips="single" data-name="showPrices">
+            <button type="button" class="chip">כן</button>
+            <button type="button" class="chip">לא</button>
+            <button type="button" class="chip">עוד לא החלטתי</button>
+          </div>
+        </div>
+        <label class="field">
+          <span class="field-label">אם כן — פרטו מחירים או חבילות</span>
+          <textarea name="prices" rows="2" placeholder="לדוגמה: פגישת ייעוץ — 250 ש״ח, ליווי חודשי — 900 ש״ח"></textarea>
+        </label>
+      </section>
+
+      <!-- 4. קהל היעד -->
+      <section class="card" data-section>
+        <div class="card-head">
+          <span class="card-num">04</span>
+          <div>
+            <h2>קהל היעד</h2>
+            <p class="card-sub">דף שמדבר אל כולם — לא מדבר אל אף אחד.</p>
+          </div>
+        </div>
+        <label class="field">
+          <span class="field-label">מי הלקוח האידיאלי שלך? <b class="req">*</b></span>
+          <textarea name="audience" required rows="3" placeholder="גיל, מגדר, מצב משפחתי, תחומי עניין — ככל שתדייקו, נדייק"></textarea>
+        </label>
+        <label class="field">
+          <span class="field-label">איזו בעיה או צורך השירות שלך פותר להם?</span>
+          <textarea name="painPoint" rows="3" placeholder="מה מציק להם? מה הם מחפשים כשהם מגיעים אליך?"></textarea>
+        </label>
+        <label class="field">
+          <span class="field-label">אזור גיאוגרפי</span>
+          <input type="text" name="area" placeholder="לדוגמה: השרון, כל הארץ, אונליין">
+        </label>
+      </section>
+
+      <!-- 5. בידול ואמון -->
+      <section class="card" data-section>
+        <div class="card-head">
+          <span class="card-num">05</span>
+          <div>
+            <h2>בידול ואמון</h2>
+            <p class="card-sub">הסיבות שבגללן בוחרים דווקא בך.</p>
+          </div>
+        </div>
+        <label class="field">
+          <span class="field-label">מה מייחד אותך לעומת המתחרים?</span>
+          <textarea name="unique" rows="3" placeholder="גישה מיוחדת, ניסיון, תוצאות, יחס אישי..."></textarea>
+        </label>
+        <label class="field">
+          <span class="field-label">הכשרות, תעודות והישגים</span>
+          <textarea name="credentials" rows="2" placeholder="קורסים, הסמכות, שנות ניסיון, פרסים, כמות לקוחות מרוצים"></textarea>
+        </label>
+        <div class="field">
+          <span class="field-label">יש המלצות מלקוחות?</span>
+          <div class="chips" data-chips="single" data-name="testimonials">
+            <button type="button" class="chip">יש — אשלח בוואטסאפ</button>
+            <button type="button" class="chip">יש בפייסבוק או בגוגל</button>
+            <button type="button" class="chip">אין עדיין</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. סגנון ועיצוב -->
+      <section class="card" data-section>
+        <div class="card-head">
+          <span class="card-num">06</span>
+          <div>
+            <h2>סגנון ועיצוב</h2>
+            <p class="card-sub">איך הדף אמור להרגיש למי שנכנס אליו.</p>
+          </div>
+        </div>
+        <div class="field">
+          <span class="field-label">איזה סגנון מדבר אליך?</span>
+          <div class="chips" data-chips="multi" data-name="style">
+            <button type="button" class="chip">נקי ומינימליסטי</button>
+            <button type="button" class="chip">חם ומשפחתי</button>
+            <button type="button" class="chip">יוקרתי ואלגנטי</button>
+            <button type="button" class="chip">צעיר ונועז</button>
+            <button type="button" class="chip">רך ועדין</button>
+            <button type="button" class="chip">אשמח להצעה שלכם</button>
+          </div>
+        </div>
+        <div class="grid-2">
+          <label class="field">
+            <span class="field-label">יש צבעי מותג?</span>
+            <input type="text" name="colors" placeholder="לדוגמה: ירוק זית ושמנת, או — אין, תציעו">
+          </label>
+          <label class="field">
+            <span class="field-label">דברים שחשוב שלא יהיו בדף</span>
+            <input type="text" name="avoid" placeholder="צבעים, סגנונות או אלמנטים שאתם פחות אוהבים">
+          </label>
+        </div>
+        <label class="field">
+          <span class="field-label">אתרים או דפים שאהבת</span>
+          <textarea name="inspiration" rows="2" placeholder="הדביקו קישורים לדפים שעשו לכם 'וואו' — גם של מתחרים"></textarea>
+        </label>
+        <div class="field">
+          <span class="field-label">יש לוגו לעסק?</span>
+          <div class="chips" data-chips="single" data-name="logo">
+            <button type="button" class="chip">יש — אשלח בוואטסאפ</button>
+            <button type="button" class="chip">אין — אשמח למשהו פשוט</button>
+            <button type="button" class="chip">אין ולא צריך</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. תוכן ונכסים -->
+      <section class="card" data-section>
+        <div class="card-head">
+          <span class="card-num">07</span>
+          <div>
+            <h2>תוכן, תמונות ורשתות</h2>
+            <p class="card-sub">מה כבר קיים אצלך ונוכל להשתמש בו.</p>
+          </div>
+        </div>
+        <div class="field">
+          <span class="field-label">אילו חומרים ויזואליים יש לך?</span>
+          <div class="chips" data-chips="multi" data-name="media">
+            <button type="button" class="chip">תמונות מקצועיות</button>
+            <button type="button" class="chip">תמונות מהטלפון</button>
+            <button type="button" class="chip">סרטונים</button>
+            <button type="button" class="chip">אין כמעט כלום</button>
+          </div>
+        </div>
+        <div class="field">
+          <span class="field-label">טקסטים לדף</span>
+          <div class="chips" data-chips="single" data-name="texts">
+            <button type="button" class="chip">יש לי טקסטים מוכנים</button>
+            <button type="button" class="chip">יש חלקית — צריך ליטוש</button>
+            <button type="button" class="chip">אשמח שתכתבו עבורי</button>
+          </div>
+        </div>
+        <label class="field">
+          <span class="field-label">קישורים לרשתות חברתיות</span>
+          <textarea name="socials" rows="2" placeholder="אינסטגרם, פייסבוק, טיקטוק, גוגל ביזנס — הדביקו קישורים"></textarea>
+        </label>
+      </section>
+
+      <!-- 8. טכני ולוחות זמנים -->
+      <section class="card" data-section>
+        <div class="card-head">
+          <span class="card-num">08</span>
+          <div>
+            <h2>פרטים טכניים ולוח זמנים</h2>
+            <p class="card-sub">הדברים הקטנים שעושים את ההבדל.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <label class="field">
+            <span class="field-label">לאיזה מספר וואטסאפ יגיעו פניות מהדף?</span>
+            <input type="tel" name="waNumber" placeholder="המספר שאליו לקוחות יכתבו">
+          </label>
+          <label class="field">
+            <span class="field-label">יש דומיין (כתובת אתר)?</span>
+            <input type="text" name="domain" placeholder="לדוגמה: www.mybusiness.co.il או — אין עדיין">
+          </label>
+        </div>
+        <label class="field">
+          <span class="field-label">דדליין או אירוע קרוב שהדף צריך להיות מוכן אליו</span>
+          <input type="text" name="deadline" placeholder="לדוגמה: השקה ב־1 בספטמבר, או — אין לחץ">
+        </label>
+        <label class="field">
+          <span class="field-label">משהו נוסף שחשוב שנדע?</span>
+          <textarea name="notes" rows="3" placeholder="כל דבר שלא שאלנו ובא לכם לספר"></textarea>
+        </label>
+      </section>
+
+      <!-- שליחה -->
+      <section class="card card-submit">
+        <h2>סיימנו! 🎉</h2>
+        <p>
+          בלחיצה על הכפתור ייפתח וואטסאפ עם סיכום מסודר של כל התשובות —
+          נשאר רק ללחוץ "שליחה" ואנחנו יוצאים לדרך.
+        </p>
+        <button type="submit" class="btn btn-primary btn-lg">שליחת השאלון בוואטסאפ ✦</button>
+        <p class="submit-note" id="submitNote" hidden>יש למלא את שדות החובה המסומנים ב־* — סימנו לך אותם באדום.</p>
+        <button type="button" class="btn btn-ghost" id="copyBtn">או: העתקת הסיכום ללוח</button>
+      </section>
+    </form>
+
+    <!-- שלב 2 — קבצים -->
+    <section class="card card-files">
+      <div class="card-head">
+        <span class="card-num">✦</span>
+        <div>
+          <h2>שלב אחרון — שליחת קבצים</h2>
+          <p class="card-sub">
+            תמונות, סרטונים, לוגו והמלצות הם הלב של דף נחיתה איכותי.
+            שלחו לנו אותם ישירות לוואטסאפ:
+          </p>
+        </div>
+      </div>
+      <a class="btn btn-whatsapp" href="https://wa.me/972528225337?text=%D7%94%D7%99%D7%99%2C%20%D7%9E%D7%99%D7%9C%D7%90%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%A9%D7%90%D7%9C%D7%95%D7%9F%20%D7%94%D7%90%D7%A4%D7%99%D7%95%D7%9F%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A9%D7%95%D7%9C%D7%97%2F%D7%AA%20%D7%A7%D7%91%D7%A6%D7%99%D7%9D" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg>
+        שליחת קבצים לוואטסאפ — 052-8225337
+      </a>
+      <p class="files-hint">אפשר לשלוח: לוגו, תמונות שלך ושל העסק, סרטונים, צילומי מסך של המלצות.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>✦ Shriki Studio — דפי נחיתה שמביאים לקוחות</p>
+  </footer>
+
+  <script src="js/form.js"></script>
+</body>
+</html>

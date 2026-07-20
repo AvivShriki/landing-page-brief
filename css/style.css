@@ -1,0 +1,275 @@
+/* ==========================================================================
+   Shriki Studio — שאלון אפיון לדף נחיתה
+   כיוון עיצובי שנבחר עם קנבה: בסיס דיו כהה, מבטא זהב־טרקוטה חם על רקע
+   שמנת, סריף אלגנטי לכותרות (Frank Ruhl Libre) וסאנס נקי לגוף (Assistant).
+   ========================================================================== */
+
+:root {
+  --ink: #221E1A;
+  --ink-soft: #5C544B;
+  --gold: #B9814A;
+  --gold-deep: #9A6636;
+  --gold-tint: #F3E4D3;
+  --cream: #FAF7F1;
+  --panel: #FFFFFF;
+  --border: #E7DECF;
+  --error: #C0392B;
+  --whatsapp: #1EBE5D;
+
+  --font-heading: 'Frank Ruhl Libre', 'Times New Roman', serif;
+  --font-body: 'Assistant', -apple-system, sans-serif;
+
+  --radius-card: 24px;
+  --radius-pill: 999px;
+  --shadow-card: 0 10px 30px rgba(34, 30, 26, 0.07);
+  --container: 860px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.65;
+  direction: rtl;
+  text-align: right;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* פס התקדמות */
+.progress-track {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 5px;
+  background: var(--gold-tint);
+  z-index: 50;
+}
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(270deg, var(--gold), var(--gold-deep));
+  transition: width 0.35s ease;
+}
+
+/* הירו */
+.hero {
+  padding: 88px 0 64px;
+  background:
+    radial-gradient(1100px 500px at 85% -10%, var(--gold-tint) 0%, transparent 60%),
+    var(--cream);
+  border-bottom: 1px solid var(--border);
+}
+.hero-inner { max-width: 640px; }
+.hero-kicker {
+  font-family: var(--font-heading);
+  color: var(--gold-deep);
+  letter-spacing: 0.14em;
+  font-size: 15px;
+  margin: 0 0 14px;
+}
+.hero h1 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: clamp(34px, 6vw, 52px);
+  line-height: 1.15;
+  margin: 0 0 18px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--gold-deep);
+}
+.hero-sub {
+  color: var(--ink-soft);
+  font-size: 18px;
+  margin: 0 0 30px;
+}
+
+/* כפתורים */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 17px;
+  border-radius: var(--radius-pill);
+  padding: 14px 32px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary {
+  background: var(--ink);
+  color: var(--cream);
+  box-shadow: 0 8px 20px rgba(34, 30, 26, 0.22);
+}
+.btn-primary:hover { background: #000; }
+.btn-lg { padding: 17px 44px; font-size: 19px; }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--border);
+  font-weight: 400;
+  font-size: 15px;
+  padding: 10px 22px;
+}
+.btn-whatsapp {
+  background: var(--whatsapp);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(30, 190, 93, 0.3);
+}
+.btn-whatsapp:hover { background: #17a850; }
+
+/* כרטיסים */
+main { padding: 48px 0 24px; }
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 36px 32px;
+  margin-bottom: 28px;
+}
+.card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+.card-num {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  color: var(--gold);
+  line-height: 1.2;
+  min-width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gold-tint);
+  background: var(--gold-tint);
+  border-radius: 50%;
+}
+.card h2 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 27px;
+  margin: 0 0 4px;
+}
+.card-sub {
+  color: var(--ink-soft);
+  margin: 0;
+  font-size: 16px;
+}
+
+/* שדות */
+.field { display: block; margin-bottom: 20px; }
+.field-label {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.req { color: var(--gold-deep); }
+input[type="text"], input[type="tel"], input[type="email"], textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 13px 16px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-tint);
+  background: #fff;
+}
+input::placeholder, textarea::placeholder { color: #A99F92; }
+textarea { resize: vertical; min-height: 60px; }
+.field.invalid input, .field.invalid textarea { border-color: var(--error); }
+.field.invalid .field-label { color: var(--error); }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+}
+
+/* צ'יפים */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink-soft);
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 9px 18px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.chip:hover { border-color: var(--gold); color: var(--ink); }
+.chip.selected {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--cream);
+  font-weight: 600;
+}
+.chips.invalid .chip { border-color: var(--error); }
+
+/* כרטיס שליחה */
+.card-submit { text-align: center; padding: 44px 32px; }
+.card-submit h2 {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  margin: 0 0 10px;
+}
+.card-submit p { color: var(--ink-soft); max-width: 480px; margin: 0 auto 26px; }
+.card-submit .btn-ghost { margin-top: 14px; }
+.submit-note { color: var(--error); font-size: 15px; margin-top: 16px; }
+
+/* כרטיס קבצים */
+.card-files {
+  background: linear-gradient(160deg, var(--gold-tint), var(--panel) 70%);
+}
+.card-files .btn-whatsapp { margin: 6px 0 14px; }
+.files-hint { color: var(--ink-soft); font-size: 15px; margin: 0; }
+
+/* פוטר */
+.footer {
+  text-align: center;
+  padding: 34px 20px 44px;
+  color: var(--ink-soft);
+  font-family: var(--font-heading);
+  font-size: 16px;
+  border-top: 1px solid var(--border);
+}
+.footer p { margin: 0; }
+
+/* מובייל */
+@media (max-width: 640px) {
+  .hero { padding: 64px 0 48px; }
+  .card { padding: 28px 20px; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .card-head { gap: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
