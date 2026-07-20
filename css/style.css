@@ -286,6 +286,15 @@ textarea { resize: vertical; min-height: 60px; }
   border-top: 1px solid var(--border);
 }
 .footer p { margin: 0; }
+.footer-phone { margin-top: 6px !important; }
+.footer-phone a {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  direction: ltr;
+  display: inline-block;
+}
 
 /* מובייל */
 @media (max-width: 640px) {
