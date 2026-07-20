@@ -70,13 +70,38 @@ body {
   border-bottom: 1px solid var(--border);
 }
 .hero-inner { max-width: 640px; }
-.hero-kicker {
-  font-family: var(--font-heading);
-  color: var(--gold-deep);
-  letter-spacing: 0.14em;
-  font-size: 15px;
-  margin: 0 0 14px;
+/* לוגו זמני — "נבט מתוך האות", לפי הקונספט שנבחר בקנבה */
+.logo-mark {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin: 0 0 18px;
 }
+.logo-bet { position: relative; display: inline-block; }
+.sprout {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  bottom: 78%;
+  width: 17px;
+  height: auto;
+  pointer-events: none;
+}
+.sprout .stem {
+  stroke: var(--gold);
+  stroke-width: 2.5;
+  fill: none;
+  stroke-linecap: round;
+}
+.sprout path:not(.stem) { fill: var(--gold); }
+.footer-logo {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--ink);
+}
+.footer-logo .sprout { width: 11px; }
 .hero h1 {
   font-family: var(--font-heading);
   font-weight: 500;
